@@ -1,0 +1,1 @@
+# vuepress2-plugin-flexsearch
