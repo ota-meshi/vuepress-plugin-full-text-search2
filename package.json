@@ -48,7 +48,7 @@
     },
     "homepage": "https://github.com/ota-meshi/vuepress2-plugin-full-text-search#readme",
     "dependencies": {
-        "@vuepress/client": "^2.0.0-0",
+        "@vuepress/client": "^2.0.0-beta.29",
         "@vuepress/core": "^2.0.0-0",
         "@vuepress/utils": "^2.0.0-0",
         "chokidar": "^3.5.2",

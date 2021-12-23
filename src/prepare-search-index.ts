@@ -85,13 +85,15 @@ function extractPageContents(page: Page): PageContent[] {
                 return
             }
             const prop = withinHeader ? "header" : "content"
-            if (scope[prop]) {
-                scope[prop] += " "
-            }
             scope[prop] += text
         },
         onopentag(name, attribute) {
-            if (ignoreElement || name === "script" || name === "style") {
+            if (
+                ignoreElement ||
+                name === "script" ||
+                name === "style" ||
+                (name === "div" && attribute.class === "line-numbers")
+            ) {
                 ignoreElement++
                 return
             }

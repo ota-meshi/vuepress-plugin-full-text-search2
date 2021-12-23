@@ -104,7 +104,7 @@ function* extractSuggestions(
         const matchHeader = buildMatch(content.header, queryStr)
         if (matchHeader) {
             yield {
-                path: page.path,
+                path: page.path + (content.slug ? `#${content.slug}` : ""),
                 parentPageTitle: getParentPageTitle(page),
                 title: page.title,
                 display: matchHeader,
@@ -117,7 +117,7 @@ function* extractSuggestions(
         const matchContent = buildMatch(content.content, queryStr)
         if (matchContent) {
             yield {
-                path: page.path,
+                path: page.path + (content.slug ? `#${content.slug}` : ""),
                 parentPageTitle: getParentPageTitle(page),
                 title: page.title,
                 display: [

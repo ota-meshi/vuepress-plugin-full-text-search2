@@ -27,9 +27,9 @@
                     <div
                         v-if="
                             s.parentPageTitle &&
-                            suggestions[i - 1] &&
-                            suggestions[i - 1].parentPageTitle !==
-                                s.parentPageTitle
+                            (!suggestions[i - 1] ||
+                                suggestions[i - 1].parentPageTitle !==
+                                    s.parentPageTitle)
                         "
                         class="parent-page-title"
                     >
