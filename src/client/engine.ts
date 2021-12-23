@@ -88,8 +88,8 @@ export function useSuggestions(query: Ref<string>): Ref<Suggestion[]> {
             .flatMap(([, s]) => s)
             .sort(
                 (a, b) =>
-                    sortedSuggestionSubTitles.indexOf(b.parentPageTitle) -
-                        sortedSuggestionSubTitles.indexOf(a.parentPageTitle) ||
+                    sortedSuggestionSubTitles.indexOf(a.parentPageTitle) -
+                        sortedSuggestionSubTitles.indexOf(b.parentPageTitle) ||
                     a.point - b.point,
             )
     }
