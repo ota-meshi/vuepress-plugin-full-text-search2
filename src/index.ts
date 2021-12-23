@@ -27,7 +27,7 @@ function fullTextSearchPluginFunction(
 
         clientAppEnhanceFiles: path.resolve(
             dirname,
-            "./client/clientAppEnhance.mjs",
+            "./client/clientAppEnhance.js",
         ),
 
         onPrepared(app) {

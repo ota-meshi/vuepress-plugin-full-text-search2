@@ -14,11 +14,7 @@
             @keyup.up="onUp"
             @keyup.down="onDown"
         />
-        <ul
-            v-if="query && suggestions.length"
-            class="suggestions"
-            @mouseleave="unfocus"
-        >
+        <ul v-if="activeSuggestion" class="suggestions" @mouseleave="unfocus">
             <li
                 v-for="(s, i) in suggestions"
                 :key="i"
