@@ -18,6 +18,7 @@ type Suggestion = {
     display: Word[]
     page: PageIndex
     content: PageContent | null
+    point: number
 }
 type SearchIndex = PageIndex[]
 type SearchIndexRef = Ref<SearchIndex>
@@ -64,8 +65,10 @@ export function useSuggestions(query: Ref<string>): Ref<Suggestion[]> {
             return
         }
         const suggestionResults = new Map<string, Suggestion[]>()
+        const suggestionSubTitles = new Set<string>()
         for (const page of searchIndex.value) {
             for (const suggest of extractSuggestions(page, queryStr)) {
+                suggestionSubTitles.add(suggest.parentPageTitle)
                 let list = suggestionResults.get(suggest.parentPageTitle)
                 if (!list) {
                     list = []
@@ -74,9 +77,21 @@ export function useSuggestions(query: Ref<string>): Ref<Suggestion[]> {
                 list.push(suggest)
             }
         }
+        const sortedSuggestionSubTitles = [...suggestionSubTitles].sort(
+            (a, b) => {
+                const listA = suggestionResults.get(a)!
+                const listB = suggestionResults.get(b)!
+                return listB.length - listA.length
+            },
+        )
         suggestions.value = [...suggestionResults]
-            .sort((a, b) => a[1].length - b[1].length)
             .flatMap(([, s]) => s)
+            .sort(
+                (a, b) =>
+                    sortedSuggestionSubTitles.indexOf(b.path) -
+                        sortedSuggestionSubTitles.indexOf(a.path) ||
+                    a.point - b.point,
+            )
     }
 }
 
@@ -97,6 +112,7 @@ function* extractSuggestions(
 
             page,
             content: null,
+            point: 1,
         }
         return
     }
@@ -111,6 +127,7 @@ function* extractSuggestions(
 
                 page,
                 content: null,
+                point: 2,
             }
             continue
         }
@@ -129,6 +146,7 @@ function* extractSuggestions(
                 ],
                 page,
                 content: null,
+                point: 10,
             }
         }
     }
