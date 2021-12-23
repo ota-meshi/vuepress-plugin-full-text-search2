@@ -1,6 +1,6 @@
 {
     "name": "vuepress2-plugin-full-text-search",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "VuePress v2 plugin that adds full-text search box.",
     "files": [
         "lib"
