@@ -1,4 +1,4 @@
-import type { App, Page } from "@vuepress/core"
+import type { App as VuepressApp, Page as VuepressPage } from "@vuepress/core"
 import type { PageContent, PageIndex } from "./types"
 import { Parser } from "htmlparser2"
 
@@ -19,7 +19,13 @@ if (import.meta.hot) {
   })
 }
 `
-
+export type App = Pick<VuepressApp, "env" | "writeTemp"> & {
+    pages: Page[]
+}
+export type Page = Pick<
+    VuepressPage,
+    "pathLocale" | "title" | "path" | "headers" | "contentRendered"
+>
 /** Prepare index resource script for search */
 export async function prepareSearchIndex({
     app,
@@ -122,7 +128,7 @@ function extractPageContents(page: Page): PageContent[] {
                     content: "",
                 }
                 results.push(scope)
-                withinHeader = 1
+                withinHeader++
             }
         },
         onclosetag() {
