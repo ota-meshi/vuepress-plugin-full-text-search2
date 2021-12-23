@@ -1,0 +1,87 @@
+{
+    "name": "vuepress2-plugin-full-text-search",
+    "version": "0.0.0",
+    "description": "VuePress v2 plugin that adds full-text search box.",
+    "files": [
+        "lib"
+    ],
+    "type": "module",
+    "main": "./lib/index.cjs",
+    "module": "./lib/index.js",
+    "exports": {
+        ".": {
+            "import": "./lib/index.js",
+            "require": "./lib/index.cjs"
+        }
+    },
+    "types": "./lib/index.d.ts",
+    "scripts": {
+        "prebuild": "npm run -s clean",
+        "build": "npm run bundle && npm run copy",
+        "bundle": "tsup",
+        "copy": "cpx \"src/**/*.{vue,svg}\" lib",
+        "clean": "rimraf .nyc_output lib coverage",
+        "lint": "eslint . --ext .js,.ts,.json,.vue",
+        "eslint-fix": "npm run lint -- --fix",
+        "format:docs": "prettier README.md --write",
+        "test": "mocha --require ts-node/register \"tests/**/*.ts\" --reporter dot --timeout 60000",
+        "cover": "nyc --reporter=lcov npm run test",
+        "debug": "mocha --require ts-node/register/transpile-only \"tests/**/*.ts\" --reporter dot",
+        "update-snap": "mocha --require ts-node/register/transpile-only \"tests/**/*.ts\" --reporter dot --update",
+        "preversion": "npm run lint && npm test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ota-meshi/vuepress2-plugin-full-text-search.git"
+    },
+    "keywords": [
+        "vuepress",
+        "vuepress-plugin",
+        "full-text-search",
+        "vuepress-next"
+    ],
+    "author": "Yosuke Ota",
+    "funding": "https://github.com/sponsors/ota-meshi",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ota-meshi/vuepress2-plugin-full-text-search/issues"
+    },
+    "homepage": "https://github.com/ota-meshi/vuepress2-plugin-full-text-search#readme",
+    "dependencies": {
+        "@vuepress/client": "^2.0.0-0",
+        "@vuepress/core": "^2.0.0-0",
+        "@vuepress/utils": "^2.0.0-0",
+        "chokidar": "^3.5.2",
+        "htmlparser2": "^7.2.0",
+        "vue": "^3.2.0"
+    },
+    "devDependencies": {
+        "@ota-meshi/eslint-plugin": "^0.10.0",
+        "@types/chai": "^4.2.22",
+        "@types/mocha": "^9.0.0",
+        "@types/node": "^16.11.11",
+        "@typescript-eslint/eslint-plugin": "^5.5.0",
+        "@typescript-eslint/parser": "^5.5.0",
+        "chai": "^4.3.4",
+        "cpx": "^1.5.0",
+        "eslint": "^8.3.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-eslint-comments": "^3.2.0",
+        "eslint-plugin-json-schema-validator": "^2.1.10",
+        "eslint-plugin-jsonc": "^2.0.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-node-dependencies": "^0.6.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-regexp": "^1.0.0",
+        "eslint-plugin-vue": "^8.2.0",
+        "mocha": "^9.1.3",
+        "mocha-chai-jest-snapshot": "^1.1.3",
+        "nyc": "^15.1.0",
+        "prettier": "^2.5.0",
+        "rimraf": "^3.0.2",
+        "ts-node": "^10.4.0",
+        "tsup": "^5.10.0",
+        "typescript": "^4.5.2",
+        "vue-eslint-parser": "^8.0.1"
+    }
+}
