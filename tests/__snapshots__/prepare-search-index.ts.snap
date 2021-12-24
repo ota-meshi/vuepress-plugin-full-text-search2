@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`prepareSearchIndex /vuepress-next/docs/guide/README.md create search index 1`] = `
+Object {
+  "internal/vuepress2-plugin-full-text-search-search-index.js": "
+export const searchIndex = [
+  {
+    \\"path\\": \\"/vuepress-next/docs/guide/README.md\\",
+    \\"title\\": \\"Mock\\",
+    \\"pathLocale\\": \\"\\",
+    \\"contents\\": [
+      {
+        \\"header\\": \\"Introduction\\",
+        \\"slug\\": \\"introduction\\",
+        \\"content\\": \\"VuePress is a markdown-centered static site generator. You can write your content (documentations, blogs, etc.) in Markdown, then VuePress will help you to generate a static site to host them.\\\\nThe purpose of creating VuePress was to support the documentation of Vue.js and its sub-projects, but now it has been helping a large amount of users to build their documentation, blogs, and other static sites.\\"
+      },
+      {
+        \\"header\\": \\"How It Works\\",
+        \\"slug\\": \\"how-it-works\\",
+        \\"content\\": \\"A VuePress site is in fact a single-page application (SPA) powered by Vue and Vue Router.\\\\nRoutes are generated according to the relative path of your markdown files. Each Markdown file is compiled into HTML with markdown-it and then processed as the template of a Vue component. This allows you to directly use Vue inside your Markdown files and is great when you need to embed dynamic content.\\\\nDuring development, we start a normal dev-server, and serve the VuePress site as a normal SPA. If you’ve used Vue before, you will notice the familiar development experience when you are writing and developing with VuePress.\\\\nDuring build, we create a server-rendered version of the VuePress site and render the corresponding HTML by virtually visiting each route. This approach is inspired by Nuxt’s nuxt generate command and other projects like Gatsby.\\"
+      },
+      {
+        \\"header\\": \\"Why Not …?\\",
+        \\"slug\\": \\"why-not-%E2%80%A6%3F\\",
+        \\"content\\": \\"\\"
+      },
+      {
+        \\"header\\": \\"Nuxt\\",
+        \\"slug\\": \\"nuxt\\",
+        \\"content\\": \\"Nuxt is an outstanding Vue SSR framework, and it is capable of doing what VuePress does. But Nuxt is designed for building applications, while VuePress is more lightweight and focused on content-centric static sites.\\"
+      },
+      {
+        \\"header\\": \\"VitePress\\",
+        \\"slug\\": \\"vitepress\\",
+        \\"content\\": \\"VitePress is the little brother of VuePress. It’s also created and maintained by our Vue.js team. It’s even more lightweight and faster than VuePress. However, as a tradeoff, it’s more opinionated and less configurable. For example, it does not support plugins. But VitePress is powerful enough to make your content online if you don’t need advanced customizations.\\\\nIt might not be an appropriate comparison, but you can take VuePress and VitePress as Laravel and Lumen.\\"
+      },
+      {
+        \\"header\\": \\"Docsify / Docute\\",
+        \\"slug\\": \\"docsify-%2F-docute\\",
+        \\"content\\": \\"Both are great projects and also Vue-powered. Except they are both fully runtime-driven and therefore not SEO-friendly. If you don’t care for SEO and don’t want to mess with installing dependencies, these are still great choices.\\"
+      },
+      {
+        \\"header\\": \\"Hexo\\",
+        \\"slug\\": \\"hexo\\",
+        \\"content\\": \\"Hexo has been serving the Vue 2.x docs well. The biggest problem is that its theming system is static and string-based - we want to take advantage of Vue for both the layout and the interactivity. Also, Hexo’s Markdown rendering isn’t the most flexible to configure.\\"
+      },
+      {
+        \\"header\\": \\"GitBook\\",
+        \\"slug\\": \\"gitbook\\",
+        \\"content\\": \\"We’ve been using GitBook for most of our sub project docs. The primary problem with GitBook is that its development reload performance is intolerable with a large amount of files. The default theme also has a pretty limiting navigation structure, and the theming system is, again, not Vue based. The team behind GitBook is also more focused on turning it into a commercial product rather than an open-source tool.\\"
+      }
+    ]
+  }
+]
+
+export const UPD_NAME = 'update-vuepress2-plugin-full-text-search-search-index'
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__[UPD_NAME]) {
+    __VUE_HMR_RUNTIME__[UPD_NAME](searchIndex)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ searchIndex }) => {
+    if (__VUE_HMR_RUNTIME__[UPD_NAME]) {
+      __VUE_HMR_RUNTIME__[UPD_NAME](searchIndex)
+    }
+  })
+}
+",
+}
+`;
+
+exports[`prepareSearchIndex /vuepress-next/docs/guide/markdown.md create search index 1`] = `
+Object {
+  "internal/vuepress2-plugin-full-text-search-search-index.js": "
+export const searchIndex = [
+  {
+    \\"path\\": \\"/vuepress-next/docs/guide/markdown.md\\",
+    \\"title\\": \\"Mock\\",
+    \\"pathLocale\\": \\"\\",
+    \\"contents\\": [
+      {
+        \\"header\\": \\"Markdown\\",
+        \\"slug\\": \\"markdown\\",
+        \\"content\\": \\"Make sure you already know Markdown well before reading this section. If not, please learn some Markdown tutorials first.\\"
+      },
+      {
+        \\"header\\": \\"Syntax Extensions\\",
+        \\"slug\\": \\"syntax-extensions\\",
+        \\"content\\": \\"The Markdown content in VuePress will be parsed by markdown-it, which supports syntax extensions via markdown-it plugins.\\\\nThis section will introduce built-in Markdown syntax extensions of VuePress.\\\\nYou can also configure those built-in extensions, load more markdown-it plugins and implement your own extensions via markdown option and extendsMarkdown option.\\"
+      },
+      {
+        \\"header\\": \\"Embedded\\",
+        \\"slug\\": \\"embedded\\",
+        \\"content\\": \\"Embedded by markdown-it: Tables (GFM)\\\\nStrikethrough (GFM)\\"
+      },
+      {
+        \\"header\\": \\"Header Anchors\\",
+        \\"slug\\": \\"header-anchors\\",
+        \\"content\\": \\"You might have noticed that, a # anchor is displayed when you hover the mouse on the headers of each section. By clicking the # anchor, you can jump to the section directly.\\\\n::: tip\\\\nThis header anchors extension is supported by markdown-it-anchor.\\\\nConfig reference: markdown.anchor\\\\n:::\\"
+      },
+      {
+        \\"header\\": \\"Links\\",
+        \\"slug\\": \\"links\\",
+        \\"content\\": \\"When using Markdown link syntax, VuePress will implement some conversions for you.\\\\nTake our documentation source files as an example:\\\\n└─ docs ├─ guide │ ├─ getting-started.md │ ├─ markdown.md # <- Here we are │ └─ README.md ├─ reference │ └─ config.md └─ README.md Raw Markdown\\\\n<!-- relative path -->\\\\n[Home](../README.md) [Config Reference](../reference/config.md) [Getting Started](./getting-started.md) <!-- absolute path -->\\\\n[Guide](/guide/README.md) [Config Reference > markdown.links](/reference/config.md#links) <!-- URL -->\\\\n[GitHub](https://github.com) Converted to\\\\n<template> <RouterLink to=\\\\\\"/\\\\\\">Home</RouterLink> <RouterLink to=\\\\\\"/reference/config.html\\\\\\">Config Reference</RouterLink> <RouterLink to=\\\\\\"/guide/getting-started.html\\\\\\">Getting Started</RouterLink> <RouterLink to=\\\\\\"/guide/\\\\\\">Guide</RouterLink> <RouterLink to=\\\\\\"/reference/config.html#links\\\\\\">Config Reference &gt; markdown.links</RouterLink> <a href=\\\\\\"https://github.com\\\\\\" target=\\\\\\"_blank\\\\\\" rel=\\\\\\"noopener noreferrer\\\\\\">GitHub</a>\\\\n</template> Rendered as\\\\nHome\\\\nConfig Reference\\\\nGetting Started\\\\nGuide\\\\nConfig Reference > markdown.links\\\\nGitHub\\\\nExplanation Internal links will be converted to <RouterLink> for SPA navigation.\\\\nInternal links to .md files will be converted to the page route path, and both absolute path and relative path are supported.\\\\nExternal links will get target=\\\\\\"_blank\\\\\\" rel=\\\\\\"noopener noreferrer\\\\\\" attrs. Suggestion\\\\nTry to use relative paths instead of absolute paths for internal links. Relative paths are a valid links to the target files, and they can navigate correctly when browsing the source files in your editor or repository.\\\\nRelative paths are consistent in different locales, so you don’t need to change the locale path when translating your content.\\\\nWhen using absolute paths, if the base of your site is not \\\\\\"/\\\\\\", you will need to prepend the base manually or use base helper. ::: tip\\\\nThis links extension is supported by our built-in plugin.\\\\nConfig reference: markdown.links\\\\n:::\\"
+      },
+      {
+        \\"header\\": \\"Emoji :tada:\\",
+        \\"slug\\": \\"emoji-%3Atada%3A\\",
+        \\"content\\": \\"You can add emoji to your Markdown content by typing :EMOJICODE:.\\\\nFor a full list of available emoji and codes, check out emoji-cheat-sheet.\\\\nInput\\\\nVuePress 2 is out :tada: ! Output\\\\nVuePress 2 is out :tada: !\\\\n::: tip\\\\nThis emoji extension is supported by markdown-it-emoji.\\\\nConfig reference: markdown.emoji\\\\n:::\\"
+      },
+      {
+        \\"header\\": \\"Table of Contents\\",
+        \\"slug\\": \\"table-of-contents\\",
+        \\"content\\": \\"If you want to put the table of contents (TOC) of your current page inside your Markdown content, you can use the [[toc]] syntax.\\\\nInput\\\\n[[toc]] Output\\\\n[[toc]]\\\\nThe headers in TOC will link to the corresponding header anchors, so TOC won’t work well if you disable header anchors.\\\\n::: tip\\\\nThis toc extension is supported by our built-in plugin, which is forked and modified from markdown-it-toc-done-right.\\\\nConfig reference: markdown.toc\\\\n:::\\"
+      },
+      {
+        \\"header\\": \\"Code Blocks\\",
+        \\"slug\\": \\"code-blocks\\",
+        \\"content\\": \\"Following code blocks extensions are implemented during markdown parsing in Node side. That means, the code blocks won’t be processed in client side.\\"
+      },
+      {
+        \\"header\\": \\"Line Highlighting\\",
+        \\"slug\\": \\"line-highlighting\\",
+        \\"content\\": \\"You can highlight specified lines of your code blocks by adding line ranges mark in your fenced code blocks:\\\\nInput\\\\n\`\`\`ts{1,6-8}\\\\nimport type { UserConfig } from '@vuepress/cli' export const config: UserConfig = { title: 'Hello, VuePress', themeConfig: { logo: 'https://vuejs.org/images/logo.png', },\\\\n}\\\\n\`\`\` Output\\\\nimport type { UserConfig } from '@vuepress/cli' export const config: UserConfig = { title: 'Hello, VuePress', themeConfig: { logo: 'https://vuejs.org/images/logo.png', },\\\\n} Examples for line ranges mark: Line ranges: {5-8}\\\\nMultiple single lines: {4,7,9}\\\\nCombined: {4,7-13,16,23-27,40} ::: tip\\\\nThis line highlighting extension is supported by our built-in plugin, which is forked and modified from markdown-it-highlight-lines.\\\\nConfig reference: markdown.code.highlightLines\\\\n:::\\"
+      },
+      {
+        \\"header\\": \\"Line Numbers\\",
+        \\"slug\\": \\"line-numbers\\",
+        \\"content\\": \\"You must have noticed that the number of lines is displayed on the left side of code blocks. This is enabled by default and you can disable it in config.\\\\nYou can add :line-numbers / :no-line-numbers mark in your fenced code blocks to override the value set in config.\\\\nInput\\\\n\`\`\`ts\\\\n// line-numbers is enabled by default\\\\nconst line2 = 'This is line 2'\\\\nconst line3 = 'This is line 3'\\\\n\`\`\` \`\`\`ts:no-line-numbers\\\\n// line-numbers is disabled\\\\nconst line2 = 'This is line 2'\\\\nconst line3 = 'This is line 3'\\\\n\`\`\` Output\\\\n// line-numbers is enabled by default\\\\nconst line2 = 'This is line 2'\\\\nconst line3 = 'This is line 3' // line-numbers is disabled\\\\nconst line2 = 'This is line 2'\\\\nconst line3 = 'This is line 3' ::: tip\\\\nThis line numbers extension is supported by our built-in plugin.\\\\nConfig reference: markdown.code.lineNumbers\\\\n:::\\"
+      },
+      {
+        \\"header\\": \\"Wrap with v-pre\\",
+        \\"slug\\": \\"wrap-with-v-pre\\",
+        \\"content\\": \\"As template syntax is allowed in Markdown, it would also work in code blocks, too.\\\\nTo avoid your code blocks being compiled by Vue, VuePress will add v-pre directive to your code blocks by default, which can be disabled in config.\\\\nYou can add :v-pre / :no-v-pre mark in your fenced code blocks to override the value set in config.\\\\n::: warning\\\\nThe template syntax characters, for example, the “Mustache” syntax (double curly braces) might be parsed by the syntax highlighter. Thus, as the following example, :no-v-pre might not work well in some languages.\\\\nIf you want to make Vue syntax work in those languages anyway, try to disable the default syntax highlighting and implement your own syntax highlighting in client side.\\\\n:::\\\\nInput\\\\n\`\`\`md\\\\n<!-- This will be kept as is by default -->\\\\n1 + 2 + 3 = {{ 1 + 2 + 3 }}\\\\n\`\`\` \`\`\`md:no-v-pre\\\\n<!-- This will be compiled by Vue -->\\\\n1 + 2 + 3 = {{ 1 + 2 + 3 }}\\\\n\`\`\` \`\`\`js:no-v-pre\\\\n// This won't be compiled correctly because of js syntax highlighting\\\\nconst onePlusTwoPlusThree = {{ 1 + 2 + 3 }}\\\\n\`\`\` Output\\\\n<!-- This will be kept as is -->\\\\n1 + 2 + 3 = {{ 1 + 2 + 3 }} <!-- This will be compiled by Vue -->\\\\n1 + 2 + 3 = {{ 1 + 2 + 3 }} // This won't be compiled correctly because of js syntax highlighting\\\\nconst onePlusTwoPlusThree = {{ 1 + 2 + 3 }} ::: tip\\\\nThis v-pre extension is supported by our built-in plugin.\\\\nConfig reference: markdown.code.vPre\\\\n:::\\"
+      },
+      {
+        \\"header\\": \\"Import Code Blocks\\",
+        \\"slug\\": \\"import-code-blocks\\",
+        \\"content\\": \\"You can import code blocks from files with following syntax:\\\\n<!-- minimal syntax -->\\\\n@[code](../foo.js) If you want to partially import the file:\\\\n<!-- partial import, from line 1 to line 10 -->\\\\n@[code{1-10}](../foo.js) The code language is inferred from the file extension, while it is recommended to specify it explicitly:\\\\n<!-- specify the code language -->\\\\n@[code js](../foo.js) In fact, the second part inside the [] will be treated as the mark of the code fence, so it supports all the syntax mentioned in the above Code Blocks section:\\\\n<!-- line highlighting -->\\\\n@[code js{2,4-5}](../foo.js) Here is a complex example: import line 3 to line 10 of the '../foo.js' file\\\\nspecify the language as 'js'\\\\nhighlight line 3 of the imported code, i.e. line 5 of the '../foo.js' file\\\\ndisable line numbers @[code{3-10} js{3}:no-line-numbers](../foo.js) Notice that path aliases are not available in import code syntax. You can use following config to handle path alias yourself:\\\\nmodule.exports = { markdown: { importCode: { handleImportPath: (str) => str.replace(/^@src/, path.resolve(__dirname, 'path/to/src')), }, },\\\\n} <!-- it will be resolved to 'path/to/src/foo.js' -->\\\\n@[code](@src/foo.js) ::: tip\\\\nThis import code extension is supported by our built-in plugin.\\\\nConfig reference: markdown.importCode\\\\n:::\\"
+      },
+      {
+        \\"header\\": \\"Using Vue in Markdown\\",
+        \\"slug\\": \\"using-vue-in-markdown\\",
+        \\"content\\": \\"This section will introduce some basic usage of Vue in Markdown.\\\\nCheck out Cookbook > Markdown and Vue SFC for more details.\\"
+      },
+      {
+        \\"header\\": \\"Template Syntax\\",
+        \\"slug\\": \\"template-syntax\\",
+        \\"content\\": \\"As we know: HTML is allowed in Markdown.\\\\nVue template syntax is compatible with HTML. That means, Vue template syntax is allowed in Markdown.\\\\nInput\\\\nOne plus one equals: {{ 1 + 1 }} <span v-for=\\\\\\"i in 3\\\\\\"> span: {{ i }} </span> Output\\\\nOne plus one equals: {{ 1 + 1 }} span: {{ i }}\\"
+      },
+      {
+        \\"header\\": \\"Components\\",
+        \\"slug\\": \\"components\\",
+        \\"content\\": \\"You can use Vue components directly in Markdown.\\\\nInput\\\\nThis is default theme built-in \`<Badge />\` component <Badge text=\\\\\\"demo\\\\\\" /> Output\\\\nThis is default theme built-in <Badge /> component ::: tip\\\\nCheck out the Built-in Components for a full list of built-in components.\\\\nCheck out the Default Theme > Built-in Components for a full list of default theme built-in components.\\\\n:::\\"
+      },
+      {
+        \\"header\\": \\"Cautions\\",
+        \\"slug\\": \\"cautions\\",
+        \\"content\\": \\"\\"
+      },
+      {
+        \\"header\\": \\"Deprecated HTML Tags\\",
+        \\"slug\\": \\"deprecated-html-tags\\",
+        \\"content\\": \\"Deprecated HTML tags such as <center> and <font> are not allowed in VuePress markdown by default.\\\\nThose tags would not be recognized as native HTML tags by Vue template compiler. Instead, Vue will try to resolve those tags as Vue components, and obviously these components usually don’t exist.\\\\nYou should try to avoid using deprecated HTML tags. However, if you want to use those tags anyway, try either of the following workarounds: Adding a v-pre directive to skip the compilation of the element and its children. Notice that the template syntax would also be invalid.\\\\nUsing compilerOptions.isCustomElement to tell Vue template compiler not try to resolve them as components. For @bundler-webpack, set vue.compilerOptions\\\\nFor @bundler-vite, set vuePluginOptions.template.compilerOptions\\"
+      }
+    ]
+  }
+]
+
+export const UPD_NAME = 'update-vuepress2-plugin-full-text-search-search-index'
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__[UPD_NAME]) {
+    __VUE_HMR_RUNTIME__[UPD_NAME](searchIndex)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ searchIndex }) => {
+    if (__VUE_HMR_RUNTIME__[UPD_NAME]) {
+      __VUE_HMR_RUNTIME__[UPD_NAME](searchIndex)
+    }
+  })
+}
+",
+}
+`;
