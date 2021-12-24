@@ -1,3 +1,4 @@
+/* eslint node/no-missing-require: 0 -- ignore */
 /* global module, require -- global */
 "use strict"
 
