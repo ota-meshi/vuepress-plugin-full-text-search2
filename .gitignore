@@ -105,3 +105,4 @@ dist
 
 # project
 /lib/
+.temp

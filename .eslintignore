@@ -3,3 +3,6 @@
 /lib
 /node_modules
 /tests/fixtures/**/*.json
+!/playground/docs/.vuepress
+/playground/docs/.vuepress/.temp
+/playground/docs/.vuepress/.cache
