@@ -1,7 +1,7 @@
 // eslint-disable-next-line eslint-comments/disable-enable-pair -- ignore
 /* eslint-disable @typescript-eslint/no-floating-promises -- ignore */
 import type { Plugin, PluginObject } from "@vuepress/core"
-import path from "path"
+import { path } from "@vuepress/utils"
 import { fileURLToPath } from "url"
 import { prepareSearchIndex } from "./prepare-search-index"
 import * as chokidar from "chokidar"
