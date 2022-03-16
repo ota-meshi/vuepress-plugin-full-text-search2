@@ -52,8 +52,8 @@ export const searchIndex = [
     ]
   }
 ]
-
 export const UPD_NAME = 'update-vuepress2-plugin-full-text-search-search-index'
+
 if (import.meta.webpackHot) {
   import.meta.webpackHot.accept()
   if (__VUE_HMR_RUNTIME__[UPD_NAME]) {
@@ -169,8 +169,8 @@ export const searchIndex = [
     ]
   }
 ]
-
 export const UPD_NAME = 'update-vuepress2-plugin-full-text-search-search-index'
+
 if (import.meta.webpackHot) {
   import.meta.webpackHot.accept()
   if (__VUE_HMR_RUNTIME__[UPD_NAME]) {

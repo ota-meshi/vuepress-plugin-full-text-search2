@@ -3,7 +3,6 @@ import type { PageContent, PageIndex } from "./types"
 import { Parser } from "htmlparser2"
 
 const HMR_CODE = `
-export const UPD_NAME = 'update-vuepress2-plugin-full-text-search-search-index'
 if (import.meta.webpackHot) {
   import.meta.webpackHot.accept()
   if (__VUE_HMR_RUNTIME__[UPD_NAME]) {
@@ -47,6 +46,7 @@ export async function prepareSearchIndex({
     // search index file content
     let content = `
 export const searchIndex = ${JSON.stringify(searchIndex, null, 2)}
+export const UPD_NAME = 'update-vuepress2-plugin-full-text-search-search-index'
 `
 
     // inject HMR code
