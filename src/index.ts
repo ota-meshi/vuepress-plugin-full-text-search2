@@ -13,7 +13,7 @@ export interface FullTextSearchPluginOptions {
     //
 }
 
-export const fullTextSearchPlugin: Plugin<FullTextSearchPluginOptions> =
+export const fullTextSearchPlugin: Plugin =
     fullTextSearchPluginFunction
 
 export default fullTextSearchPlugin
