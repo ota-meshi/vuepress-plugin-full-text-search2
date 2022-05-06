@@ -51,7 +51,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed } from "vue"
-import { useRouter } from "@vuepress/client"
+import { useRouter } from "vue-router"
 import { useSuggestions } from "./engine"
 
 export default defineComponent({
