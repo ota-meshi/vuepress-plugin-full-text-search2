@@ -82,6 +82,6 @@
         "ts-node": "^10.4.0",
         "tsup": "^5.10.0",
         "typescript": "^4.5.2",
-        "vue-eslint-parser": "^8.0.1"
+        "vue-eslint-parser": "^9.0.0"
     }
 }
