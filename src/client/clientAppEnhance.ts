@@ -1,8 +1,10 @@
-import { defineClientAppEnhance } from "@vuepress/client"
+import { defineClientConfig } from "@vuepress/client"
 import { defineAsyncComponent } from "vue"
 
-export default defineClientAppEnhance(({ app }) => {
+export default defineClientConfig({
     // eslint-disable-next-line @typescript-eslint/naming-convention -- component
-    const SearchBox = defineAsyncComponent(() => import("./SearchBox.vue"))
-    app.component("SearchBox", SearchBox)
+    enhance({ app }) {
+        const SearchBox = defineAsyncComponent(() => import("./SearchBox.vue"))
+        app.component("SearchBox", SearchBox)
+    }
 })

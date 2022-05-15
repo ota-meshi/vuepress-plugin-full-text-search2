@@ -24,7 +24,7 @@ function fullTextSearchPluginFunction(
     return {
         name: "vuepress2-plugin-full-text-search",
 
-        clientAppEnhanceFiles: path.resolve(
+        clientConfigFile: path.resolve(
             dirname,
             "./client/clientAppEnhance.js",
         ),
