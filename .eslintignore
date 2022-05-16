@@ -6,3 +6,8 @@
 !/playground/docs/.vuepress
 /playground/docs/.vuepress/.temp
 /playground/docs/.vuepress/.cache
+/playground/docs/.vuepress/dist
+!/playground-for-2.0.0-beta.43/docs/.vuepress
+/playground-for-2.0.0-beta.43/docs/.vuepress/.temp
+/playground-for-2.0.0-beta.43/docs/.vuepress/.cache
+/playground-for-2.0.0-beta.43/docs/.vuepress/dist
