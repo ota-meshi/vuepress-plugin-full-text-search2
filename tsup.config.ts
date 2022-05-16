@@ -6,6 +6,7 @@ export default defineConfig({
     entryPoints: [
         "src/index.ts",
         "src/client/clientAppEnhance.ts",
+        "src/client/clientConfig.ts",
         "src/client/engine.ts",
     ],
     format: ["cjs", "esm"],
