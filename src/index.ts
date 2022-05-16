@@ -24,7 +24,13 @@ function fullTextSearchPluginFunction(
     return {
         name: "vuepress2-plugin-full-text-search",
 
-        clientConfigFile: path.resolve(dirname, "./client/clientAppEnhance.js"),
+        clientConfigFile: path.resolve(dirname, "./client/clientConfig.js"),
+
+        // @ts-expect-error -- Backward compatibility for vuepress@<=2.0.0-beta.43
+        clientAppEnhanceFiles: path.resolve(
+            dirname,
+            "./client/clientAppEnhance.js",
+        ),
 
         onPrepared(app) {
             prepareSearchIndex({ app })
