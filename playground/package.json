@@ -1,11 +1,11 @@
 {
-  "name": "vuepress2-plugin-full-text-search-playground",
+  "name": "vuepress-plugin-full-text-search2-playground",
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "@vuepress/cli": "^2.0.0-beta.29",
     "vuepress": "^2.0.0-beta.30",
-    "vuepress2-plugin-full-text-search": "file:../vuepress2-plugin-full-text-search-0.1.2.tgz"
+    "vuepress-plugin-full-text-search2": "file:../vuepress-plugin-full-text-search2-0.1.2.tgz"
   },
   "scripts": {
     "docs:build": "vuepress build docs --clean-cache",

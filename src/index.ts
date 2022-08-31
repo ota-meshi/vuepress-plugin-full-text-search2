@@ -22,7 +22,7 @@ function fullTextSearchPluginFunction(
   _options: FullTextSearchPluginOptions
 ): PluginObject {
   return {
-    name: "vuepress2-plugin-full-text-search",
+    name: "vuepress-plugin-full-text-search2",
 
     clientConfigFile: path.resolve(dirname, "./client/clientConfig.js"),
 

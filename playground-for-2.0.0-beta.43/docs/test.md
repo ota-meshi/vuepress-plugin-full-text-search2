@@ -9,7 +9,7 @@
 ## Install
 
 ```shell
-npm i -D vuepress2-plugin-full-text-search
+npm i -D vuepress-plugin-full-text-search2
 ```
 
 ## Config
@@ -22,7 +22,7 @@ e.g. `.vuepress/config.js`
 
 ```js
 module.exports = {
-  plugins: [[require("vuepress2-plugin-full-text-search").default]],
+  plugins: [[require("vuepress-plugin-full-text-search2").default]],
 };
 ```
 
@@ -31,7 +31,7 @@ module.exports = {
 e.g. `.vuepress/config.js`
 
 ```js
-import pluginFullTextSearch from "vuepress2-plugin-full-text-search";
+import pluginFullTextSearch from "vuepress-plugin-full-text-search2";
 module.exports = {
   plugins: [[pluginFullTextSearch]],
 };

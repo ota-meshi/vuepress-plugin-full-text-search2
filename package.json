@@ -1,5 +1,5 @@
 {
-  "name": "vuepress2-plugin-full-text-search",
+  "name": "vuepress-plugin-full-text-search2",
   "version": "0.2.0",
   "description": "VuePress v2 plugin that adds full-text search box.",
   "files": [
@@ -28,11 +28,12 @@
     "cover": "nyc --reporter=lcov npm run test",
     "debug": "mocha --require ts-node/register/transpile-only \"tests/**/*.ts\" --reporter dot",
     "update-snap": "mocha --require ts-node/register/transpile-only \"tests/**/*.ts\" --reporter dot --update",
-    "preversion": "npm run lint && npm test"
+    "preversion": "npm run lint && npm test",
+    "make-alias-package": "node ./scripts/make-alias-package.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ota-meshi/vuepress2-plugin-full-text-search.git"
+    "url": "git+https://github.com/ota-meshi/vuepress-plugin-full-text-search2.git"
   },
   "keywords": [
     "vuepress",
@@ -44,9 +45,9 @@
   "funding": "https://github.com/sponsors/ota-meshi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ota-meshi/vuepress2-plugin-full-text-search/issues"
+    "url": "https://github.com/ota-meshi/vuepress-plugin-full-text-search2/issues"
   },
-  "homepage": "https://github.com/ota-meshi/vuepress2-plugin-full-text-search#readme",
+  "homepage": "https://github.com/ota-meshi/vuepress-plugin-full-text-search2#readme",
   "dependencies": {
     "@vuepress/client": "^2.0.0-beta.29",
     "@vuepress/core": "^2.0.0-0",

@@ -46,7 +46,7 @@ export async function prepareSearchIndex({
   // search index file content
   let content = `
 export const searchIndex = ${JSON.stringify(searchIndex, null, 2)}
-export const UPD_NAME = 'update-vuepress2-plugin-full-text-search-search-index'
+export const UPD_NAME = 'update-vuepress-plugin-full-text-search2-search-index'
 `;
 
   // inject HMR code
@@ -55,7 +55,7 @@ export const UPD_NAME = 'update-vuepress2-plugin-full-text-search-search-index'
   }
 
   return app.writeTemp(
-    "internal/vuepress2-plugin-full-text-search-search-index.js",
+    "internal/vuepress-plugin-full-text-search2-search-index.js",
     content
   );
 }

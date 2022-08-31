@@ -2,7 +2,7 @@
 
 exports[`prepareSearchIndex /vuepress-next/docs/guide/README.md create search index 1`] = `
 Object {
-  "internal/vuepress2-plugin-full-text-search-search-index.js": "
+  "internal/vuepress-plugin-full-text-search2-search-index.js": "
 export const searchIndex = [
   {
     \\"path\\": \\"/vuepress-next/docs/guide/README.md\\",
@@ -52,7 +52,7 @@ export const searchIndex = [
     ]
   }
 ]
-export const UPD_NAME = 'update-vuepress2-plugin-full-text-search-search-index'
+export const UPD_NAME = 'update-vuepress-plugin-full-text-search2-search-index'
 
 if (import.meta.webpackHot) {
   import.meta.webpackHot.accept()
@@ -74,7 +74,7 @@ if (import.meta.hot) {
 
 exports[`prepareSearchIndex /vuepress-next/docs/guide/markdown.md create search index 1`] = `
 Object {
-  "internal/vuepress2-plugin-full-text-search-search-index.js": "
+  "internal/vuepress-plugin-full-text-search2-search-index.js": "
 export const searchIndex = [
   {
     \\"path\\": \\"/vuepress-next/docs/guide/markdown.md\\",
@@ -169,7 +169,7 @@ export const searchIndex = [
     ]
   }
 ]
-export const UPD_NAME = 'update-vuepress2-plugin-full-text-search-search-index'
+export const UPD_NAME = 'update-vuepress-plugin-full-text-search2-search-index'
 
 if (import.meta.webpackHot) {
   import.meta.webpackHot.accept()
