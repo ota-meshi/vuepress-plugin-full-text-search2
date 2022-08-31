@@ -1,10 +1,10 @@
-import chai from "chai"
-import { jestSnapshotPlugin } from "mocha-chai-jest-snapshot"
+import chai from "chai";
+import { jestSnapshotPlugin } from "mocha-chai-jest-snapshot";
 
-chai.use(jestSnapshotPlugin())
+chai.use(jestSnapshotPlugin());
 
 describe("test", () => {
-    it("test", () => {
-        // chai.expect({}).toMatchSnapshot()
-    })
-})
+  it("test", () => {
+    // chai.expect({}).toMatchSnapshot()
+  });
+});
