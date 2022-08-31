@@ -1,6 +1,6 @@
-import type { App as VuepressApp, Page as VuepressPage } from "@vuepress/core"
-import type { PageContent, PageIndex } from "./types"
-import { Parser } from "htmlparser2"
+import type { App as VuepressApp, Page as VuepressPage } from "@vuepress/core";
+import type { PageContent, PageIndex } from "./types";
+import { Parser } from "htmlparser2";
 
 const HMR_CODE = `
 if (import.meta.webpackHot) {
@@ -17,140 +17,140 @@ if (import.meta.hot) {
     }
   })
 }
-`
+`;
 export type App = Pick<VuepressApp, "env" | "writeTemp"> & {
-    pages: Page[]
-}
+  pages: Page[];
+};
 export type Page = Pick<
-    VuepressPage,
-    "pathLocale" | "title" | "path" | "headers" | "contentRendered"
->
+  VuepressPage,
+  "pathLocale" | "title" | "path" | "headers" | "contentRendered"
+>;
 /** Prepare index resource script for search */
 export async function prepareSearchIndex({
-    app,
+  app,
 }: {
-    app: App
+  app: App;
 }): Promise<string> {
-    // generate search index
-    const searchIndex: PageIndex[] = []
+  // generate search index
+  const searchIndex: PageIndex[] = [];
 
-    for (const page of app.pages) {
-        searchIndex.push({
-            path: page.path,
-            title: page.title,
-            pathLocale: page.pathLocale,
-            contents: extractPageContents(page),
-        })
-    }
+  for (const page of app.pages) {
+    searchIndex.push({
+      path: page.path,
+      title: page.title,
+      pathLocale: page.pathLocale,
+      contents: extractPageContents(page),
+    });
+  }
 
-    // search index file content
-    let content = `
+  // search index file content
+  let content = `
 export const searchIndex = ${JSON.stringify(searchIndex, null, 2)}
 export const UPD_NAME = 'update-vuepress2-plugin-full-text-search-search-index'
-`
+`;
 
-    // inject HMR code
-    if (app.env.isDev) {
-        content += HMR_CODE
-    }
+  // inject HMR code
+  if (app.env.isDev) {
+    content += HMR_CODE;
+  }
 
-    return app.writeTemp(
-        "internal/vuepress2-plugin-full-text-search-search-index.js",
-        content,
-    )
+  return app.writeTemp(
+    "internal/vuepress2-plugin-full-text-search-search-index.js",
+    content
+  );
 }
 
 /**
  * Extract contents
  */
 function extractPageContents(page: Page): PageContent[] {
-    const results: PageContent[] = []
+  const results: PageContent[] = [];
 
-    const slugs = new Map<string, string>()
-    const headers = [...page.headers]
-    while (headers.length) {
-        const h = headers.shift()!
-        slugs.set(h.slug, h.title)
+  const slugs = new Map<string, string>();
+  const headers = [...page.headers];
+  while (headers.length) {
+    const h = headers.shift()!;
+    slugs.set(h.slug, h.title);
 
-        headers.push(...h.children)
-    }
+    headers.push(...h.children);
+  }
 
-    let ignoreElement = 0
-    let withinHeader = 0
+  let ignoreElement = 0;
+  let withinHeader = 0;
 
-    let scope: PageContent = {
-        header: "",
-        slug: "",
-        content: "",
-    }
-    results.push(scope)
+  let scope: PageContent = {
+    header: "",
+    slug: "",
+    content: "",
+  };
+  results.push(scope);
 
-    const parser = new Parser({
-        ontext(text) {
-            if (ignoreElement) {
-                return
-            }
-            const prop = withinHeader ? "header" : "content"
-            scope[prop] += text
-        },
-        onopentag(name, attribute) {
-            if (
-                ignoreElement ||
-                name === "script" ||
-                name === "style" ||
-                (name === "div" && attribute.class === "line-numbers")
-            ) {
-                ignoreElement++
-                return
-            }
-            if (withinHeader) {
-                withinHeader++
-                return
-            }
+  const parser = new Parser({
+    ontext(text) {
+      if (ignoreElement) {
+        return;
+      }
+      const prop = withinHeader ? "header" : "content";
+      scope[prop] += text;
+    },
+    onopentag(name, attribute) {
+      if (
+        ignoreElement ||
+        name === "script" ||
+        name === "style" ||
+        (name === "div" && attribute.class === "line-numbers")
+      ) {
+        ignoreElement++;
+        return;
+      }
+      if (withinHeader) {
+        withinHeader++;
+        return;
+      }
 
-            if (!/^h\d$/u.test(name)) {
-                return
-            }
-            const id = attribute.id
-            const title = slugs.get(id)
-            if (title) {
-                scope = {
-                    header: title,
-                    slug: id,
-                    content: "",
-                }
-                results.push(scope)
-                ignoreElement++
-            } else {
-                scope = {
-                    header: "",
-                    slug: id,
-                    content: "",
-                }
-                results.push(scope)
-                withinHeader++
-            }
-        },
-        onclosetag() {
-            if (ignoreElement) {
-                ignoreElement--
-                return
-            }
-            if (withinHeader) {
-                withinHeader--
-            }
-        },
+      if (!/^h\d$/u.test(name)) {
+        return;
+      }
+      const id = attribute.id;
+      const title = slugs.get(id);
+      if (title) {
+        scope = {
+          header: title,
+          slug: id,
+          content: "",
+        };
+        results.push(scope);
+        ignoreElement++;
+      } else {
+        scope = {
+          header: "",
+          slug: id,
+          content: "",
+        };
+        results.push(scope);
+        withinHeader++;
+      }
+    },
+    onclosetag() {
+      if (ignoreElement) {
+        ignoreElement--;
+        return;
+      }
+      if (withinHeader) {
+        withinHeader--;
+      }
+    },
+  });
+  parser.parseComplete(page.contentRendered);
+
+  return results
+    .map((p) => {
+      p.header = p.header
+        .replace(/\s{2,}/g, " ")
+        .replace(/^#/g, "")
+        .trim();
+      p.content = p.content.replace(/\s{2,}/g, " ").trim();
+      return p;
     })
-    parser.parseComplete(page.contentRendered)
-
-    return results
-        .map((p) => {
-            p.header = p.header
-                .replace(/\s{2,}/g, " ")
-                .replace(/^#/g, "")
-                .trim()
-            p.content = p.content.replace(/\s{2,}/g, " ").trim()
-            return p
-        })
-        .filter((p) => p.content || p.header)
+    .filter((p) => p.content || p.header);
 }
