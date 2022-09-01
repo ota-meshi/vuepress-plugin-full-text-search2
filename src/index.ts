@@ -1,6 +1,6 @@
 // eslint-disable-next-line eslint-comments/disable-enable-pair -- ignore
 /* eslint-disable @typescript-eslint/no-floating-promises -- ignore */
-import type { Plugin, PluginObject } from "@vuepress/core";
+import type { App, LocaleConfig, PluginObject } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { fileURLToPath } from "url";
 import { prepareSearchIndex } from "./prepare-search-index";
@@ -11,21 +11,29 @@ const filename =
     : fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface -- ignore
 export interface FullTextSearchPluginOptions {
-  //
+  /**
+   * Locales config for search box
+   */
+  locales?: LocaleConfig<{
+    placeholder: string;
+  }>;
 }
 
-export const fullTextSearchPlugin: Plugin = fullTextSearchPluginFunction;
+export const fullTextSearchPlugin = fullTextSearchPluginFunction;
 
 export default fullTextSearchPlugin;
 
 /** init plugin */
 function fullTextSearchPluginFunction(
-  _options: FullTextSearchPluginOptions
+  options: FullTextSearchPluginOptions | App = {}
 ): PluginObject {
   return {
     name: "vuepress-plugin-full-text-search2",
+
+    define: {
+      __SEARCH_LOCALES__: ("locales" in options ? options?.locales : {}) ?? {},
+    },
 
     clientConfigFile: path.resolve(dirname, "./client/clientConfig.js"),
 

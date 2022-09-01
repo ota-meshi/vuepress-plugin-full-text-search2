@@ -18,7 +18,8 @@ type Suggestion = {
   display: Word[];
   page: PageIndex;
   content: PageContent | null;
-  point: number;
+  parentPagePriority: number;
+  priority: number;
 };
 type SearchIndex = PageIndex[];
 type SearchIndexRef = Ref<SearchIndex>;
@@ -86,9 +87,10 @@ export function useSuggestions(query: Ref<string>): Ref<Suggestion[]> {
       .flatMap(([, s]) => s)
       .sort(
         (a, b) =>
+          a.parentPagePriority - b.parentPagePriority ||
           sortedSuggestionSubTitles.indexOf(a.parentPageTitle) -
             sortedSuggestionSubTitles.indexOf(b.parentPageTitle) ||
-          a.point - b.point
+          a.priority - b.priority
       );
   }
 }
@@ -110,7 +112,8 @@ function* extractSuggestions(
 
       page,
       content: null,
-      point: 1,
+      parentPagePriority: 1,
+      priority: 1,
     };
     return;
   }
@@ -125,7 +128,8 @@ function* extractSuggestions(
 
         page,
         content: null,
-        point: 2,
+        parentPagePriority: 10,
+        priority: 2,
       };
       continue;
     }
@@ -144,7 +148,8 @@ function* extractSuggestions(
         ],
         page,
         content: null,
-        point: 10,
+        parentPagePriority: 10,
+        priority: 10,
       };
     }
   }

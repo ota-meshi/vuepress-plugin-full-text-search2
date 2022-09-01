@@ -5,7 +5,7 @@
       v-model="query"
       aria-label="Search"
       :class="{ focused: focused }"
-      placeholder="Search"
+      :placeholder="locale.placeholder ?? 'Search'"
       autocomplete="off"
       spellcheck="false"
       @focus="() => (focused = true)"
@@ -49,13 +49,31 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed } from "vue";
+import { useRouteLocale } from "@vuepress/client";
+import { LocaleConfig } from "@vuepress/shared";
+import { defineComponent, ref, computed, PropType, toRefs } from "vue";
 import { useRouter } from "vue-router";
 import { useSuggestions } from "./engine";
 
+type SearchBoxLocales = LocaleConfig<{
+  placeholder: string;
+}>;
+
+declare const __SEARCH_LOCALES__: SearchBoxLocales;
+
+const defaultLocales = __SEARCH_LOCALES__;
+
 export default defineComponent({
   name: "SearchBox",
-  setup() {
+  props: {
+    locales: {
+      type: Object as PropType<SearchBoxLocales>,
+      required: false,
+      default: () => defaultLocales,
+    },
+  },
+  setup(props) {
+    const { locales } = toRefs(props);
     const query = ref("");
     const focused = ref(false);
     const focusIndex = ref(-1);
@@ -66,6 +84,9 @@ export default defineComponent({
     );
 
     const router = useRouter();
+    const routeLocale = useRouteLocale();
+
+    const locale = computed(() => locales.value[routeLocale.value] ?? {});
 
     /** Move focus to up */
     function onUp() {
@@ -123,6 +144,7 @@ export default defineComponent({
       focus,
       unfocus,
       go,
+      locale,
     };
   },
 });
