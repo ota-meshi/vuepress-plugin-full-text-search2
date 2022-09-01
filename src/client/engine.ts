@@ -2,7 +2,7 @@ import {
   searchIndex as searchIndexRaw,
   UPD_NAME,
   // @ts-expect-error -- generated from prepare-search-index
-} from "@internal/vuepress2-plugin-full-text-search-search-index";
+} from "@internal/vuepress-plugin-full-text-search2-search-index";
 import { computed, ref, watch } from "vue";
 import type { Ref } from "vue";
 import type { PageContent, PageIndex } from "../types";

@@ -26,3 +26,15 @@ jobs:
       run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - name: make alias package
+      run: npm run make-alias-package
+    - name: check can npm-publish alias
+      run: |+
+        cd ./alias-package
+        npx can-npm-publish
+    - name: release alias
+      run: |+
+        cd ./alias-package
+        npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

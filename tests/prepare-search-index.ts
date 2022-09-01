@@ -8,7 +8,10 @@ import type { Fixture } from "./utils";
 import { listupFixtures } from "./utils";
 import MarkdownIt from "markdown-it";
 import anchorPlugin from "markdown-it-anchor";
-const filename = fileURLToPath(import.meta.url);
+const filename =
+  typeof __filename !== "undefined"
+    ? __filename
+    : fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 chai.use(jestSnapshotPlugin());

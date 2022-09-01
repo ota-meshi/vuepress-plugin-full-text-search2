@@ -5,7 +5,10 @@ import { path } from "@vuepress/utils";
 import { fileURLToPath } from "url";
 import { prepareSearchIndex } from "./prepare-search-index";
 import * as chokidar from "chokidar";
-const filename = fileURLToPath(import.meta.url);
+const filename =
+  typeof __filename !== "undefined"
+    ? __filename
+    : fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface -- ignore
@@ -22,7 +25,7 @@ function fullTextSearchPluginFunction(
   _options: FullTextSearchPluginOptions
 ): PluginObject {
   return {
-    name: "vuepress2-plugin-full-text-search",
+    name: "vuepress-plugin-full-text-search2",
 
     clientConfigFile: path.resolve(dirname, "./client/clientConfig.js"),
 

@@ -106,3 +106,4 @@ dist
 # project
 /lib/
 .temp
+/alias-package
