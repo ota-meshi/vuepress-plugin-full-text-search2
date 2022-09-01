@@ -90,5 +90,14 @@ module.exports = {
         "@typescript-eslint/no-misused-promises": "off",
       },
     },
+    {
+      files: ["playground/**/*.*"],
+      rules: {
+        "node/no-missing-import": "off",
+        "node/no-unpublished-import": "off",
+        "node/no-missing-require": "off",
+        "node/no-unpublished-require": "off",
+      },
+    },
   ],
 };
