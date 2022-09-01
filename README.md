@@ -2,6 +2,8 @@
 
 [VuePress v2] plugin that adds full-text search box.
 
+![screenshot](./screenshot.png)
+
 [vuepress v2]: https://v2.vuepress.vuejs.org/
 
 :warning: WARNING: this project is considered to be in BETA until [VuePress v2] is available for general use and the API is stable!
@@ -18,7 +20,7 @@ e.g. `.vuepress/config.js`
 
 ```js
 module.exports = {
-  plugins: [[require("vuepress-plugin-full-text-search2").default]],
+  plugins: [require("vuepress-plugin-full-text-search2").default],
 };
 ```
 
@@ -29,6 +31,6 @@ e.g. `.vuepress/config.js`
 ```js
 import pluginFullTextSearch from "vuepress-plugin-full-text-search2";
 module.exports = {
-  plugins: [[pluginFullTextSearch]],
+  plugins: [pluginFullTextSearch],
 };
 ```

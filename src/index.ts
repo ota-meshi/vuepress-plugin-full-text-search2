@@ -5,7 +5,10 @@ import { path } from "@vuepress/utils";
 import { fileURLToPath } from "url";
 import { prepareSearchIndex } from "./prepare-search-index";
 import * as chokidar from "chokidar";
-const filename = fileURLToPath(import.meta.url);
+const filename =
+  typeof __filename !== "undefined"
+    ? __filename
+    : fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface -- ignore

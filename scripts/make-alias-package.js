@@ -49,12 +49,7 @@ for (const target of ["./README.md", "./LICENSE"]) {
 
   let content = fs.readFileSync(srcPath, "utf8");
   content = content.replace(new RegExp(srcName, "gu"), ALIAS);
-
-  //   for (const revertRe of []) {
-  //     content = content.replace(new RegExp(revertRe, "gu"), (match) =>
-  //       match.replace(new RegExp(ALIAS, "gu"), srcName)
-  //     );
-  //   }
+  content = content.replace(/\(\.\/screenshot.png\)/g, "(../screenshot.png)");
 
   if (target === "./README.md") {
     content = `<h1 align="center">⚠This package will be DEPRECATED⚠</h1>

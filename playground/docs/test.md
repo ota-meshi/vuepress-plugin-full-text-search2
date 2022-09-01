@@ -1,4 +1,4 @@
-# Test
+# Contents
 
 [VuePress v2] plugin that adds full-text search box.
 
