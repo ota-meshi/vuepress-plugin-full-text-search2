@@ -26,7 +26,7 @@ export default fullTextSearchPlugin;
 
 /** init plugin */
 function fullTextSearchPluginFunction(
-  options: FullTextSearchPluginOptions | App = {}
+  options: FullTextSearchPluginOptions | App = {},
 ): PluginObject {
   return {
     name: "vuepress-plugin-full-text-search2",
@@ -40,7 +40,7 @@ function fullTextSearchPluginFunction(
     // @ts-expect-error -- Backward compatibility for vuepress@<=2.0.0-beta.43
     clientAppEnhanceFiles: path.resolve(
       dirname,
-      "./client/clientAppEnhance.js"
+      "./client/clientAppEnhance.js",
     ),
 
     onPrepared(app) {

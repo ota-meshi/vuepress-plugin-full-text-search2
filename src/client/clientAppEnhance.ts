@@ -7,10 +7,10 @@ import { defineAsyncComponent } from "vue";
 export default defineClientAppEnhance(
   (
     // @ts-expect-error -- Backward compatibility for vuepress@<=2.0.0-beta.43
-    { app }
+    { app },
   ) => {
     // eslint-disable-next-line @typescript-eslint/naming-convention -- component
     const SearchBox = defineAsyncComponent(() => import("./SearchBox.vue"));
     app.component("SearchBox", SearchBox);
-  }
+  },
 );

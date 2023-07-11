@@ -90,7 +90,7 @@ export function useSuggestions(query: Ref<string>): Ref<Suggestion[]> {
           a.parentPagePriority - b.parentPagePriority ||
           sortedSuggestionSubTitles.indexOf(a.parentPageTitle) -
             sortedSuggestionSubTitles.indexOf(b.parentPageTitle) ||
-          a.priority - b.priority
+          a.priority - b.priority,
       );
   }
 }
@@ -100,7 +100,7 @@ export function useSuggestions(query: Ref<string>): Ref<Suggestion[]> {
  */
 function* extractSuggestions(
   page: PageIndex,
-  queryStr: string
+  queryStr: string,
 ): Iterable<Suggestion> {
   const matchTitle = buildMatch(page.title, queryStr);
   if (matchTitle) {
