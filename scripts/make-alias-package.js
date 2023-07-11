@@ -6,11 +6,11 @@ import { formatAndSave } from "./lib/utils.js";
 const dirname = path.dirname(
   fileURLToPath(
     // @ts-expect-error -- Cannot change `module` option
-    import.meta.url
-  )
+    import.meta.url,
+  ),
 );
 const packageJson = JSON.parse(
-  fs.readFileSync(path.resolve(dirname, "../package.json"), "utf-8")
+  fs.readFileSync(path.resolve(dirname, "../package.json"), "utf-8"),
 );
 
 const ALIAS = "vuepress2-plugin-full-text-search";
@@ -85,7 +85,7 @@ import pluginFullTextSearch from "vuepress2-plugin-full-text-search";
 module.exports = {
   plugins: [[pluginFullTextSearch]],
 };
-\`\`\``
+\`\`\``,
   );
 
   formatAndSave(aliasPath, content);

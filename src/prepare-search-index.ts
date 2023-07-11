@@ -56,7 +56,7 @@ export const UPD_NAME = 'update-vuepress-plugin-full-text-search2-search-index'
 
   return app.writeTemp(
     "internal/vuepress-plugin-full-text-search2-search-index.js",
-    content
+    content,
   );
 }
 

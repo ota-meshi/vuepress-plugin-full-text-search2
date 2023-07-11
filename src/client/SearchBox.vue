@@ -80,7 +80,7 @@ export default defineComponent({
     const suggestions = useSuggestions(query);
 
     const activeSuggestion = computed(
-      () => query.value && focused.value && suggestions.value.length
+      () => query.value && focused.value && suggestions.value.length,
     );
 
     const router = useRouter();
