@@ -29,7 +29,7 @@ module.exports = {
         sourceType: "module",
       },
       rules: {
-        "node/file-extension-in-import": "off",
+        "n/file-extension-in-import": "off",
       },
     },
     {
@@ -93,10 +93,10 @@ module.exports = {
     {
       files: ["playground/**/*.*"],
       rules: {
-        "node/no-missing-import": "off",
-        "node/no-unpublished-import": "off",
-        "node/no-missing-require": "off",
-        "node/no-unpublished-require": "off",
+        "n/no-missing-import": "off",
+        "n/no-unpublished-import": "off",
+        "n/no-missing-require": "off",
+        "n/no-unpublished-require": "off",
       },
     },
   ],
