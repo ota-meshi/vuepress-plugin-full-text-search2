@@ -12,8 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
-      with:
-        node-version: 14
     - name: Install Packages
       run: npm install --legacy-peer-deps
     - name: Lint
