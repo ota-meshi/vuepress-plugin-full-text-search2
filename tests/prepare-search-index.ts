@@ -6,6 +6,7 @@ import type { App, Page } from "../src/prepare-search-index";
 import { prepareSearchIndex } from "../src/prepare-search-index";
 import type { Fixture } from "./utils";
 import { listupFixtures } from "./utils";
+// eslint-disable-next-line @typescript-eslint/naming-convention -- Class name
 import MarkdownIt from "markdown-it";
 import anchorPlugin from "markdown-it-anchor";
 const filename =
