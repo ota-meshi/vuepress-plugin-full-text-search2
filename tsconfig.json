@@ -1,17 +1,16 @@
 {
+  "extends": "tsconfig-vuepress/base.json",
   "compilerOptions": {
-    "target": "es2015",
-    "strict": true,
-    "lib": ["es2020", "DOM"],
-    "module": "es2022",
-    "declaration": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node"
+    "allowSyntheticDefaultImports": true,
+    "lib": ["DOM", "ES2022"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "target": "ES2022",
+    "types": ["vuepress/client-types"]
+    // "composite": true
   },
   "include": [
     "src/**/*.ts",
