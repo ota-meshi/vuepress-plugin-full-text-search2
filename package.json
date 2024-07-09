@@ -60,6 +60,7 @@
     "vuepress": "2.0.0-rc.8"
   },
   "devDependencies": {
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.3.0",
     "@ota-meshi/eslint-plugin": "^0.17.5",
     "@types/chai": "^4.2.22",
     "@types/mocha": "^10.0.0",
@@ -70,7 +71,6 @@
     "cpx2": "^7.0.0",
     "eslint": "^9.6.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-jsdoc": "^48.5.2",
     "eslint-plugin-json-schema-validator": "^5.0.0",
     "eslint-plugin-jsonc": "^2.0.0",
