@@ -1,8 +1,8 @@
 {
-    "eslint.validate": ["javascript", "typescript", "json", "jsonc", "vue"],
+  "eslint.validate": ["javascript", "typescript", "json", "jsonc", "vue"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
-  }, 
+  },
   "vetur.validation.template": false,
   "typescript.tsdk": "node_modules/typescript/lib"
 }

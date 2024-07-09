@@ -9,12 +9,12 @@ cp.execSync("npm run build", { stdio: "inherit", cwd: PROJECT_ROOT });
 cp.execSync("npm pack", { stdio: "inherit", cwd: PROJECT_ROOT });
 const orgTgzName = path.resolve(
   PROJECT_ROOT,
-  `vuepress-plugin-full-text-search2-${require("../package.json").version}.tgz`
+  `vuepress-plugin-full-text-search2-${require("../package.json").version}.tgz`,
 );
 
 const tgzName = path.resolve(
   PROJECT_ROOT,
-  `vuepress-plugin-full-text-search2-test.tgz`
+  `vuepress-plugin-full-text-search2-test.tgz`,
 );
 if (fs.existsSync(tgzName)) {
   fs.unlinkSync(tgzName);
