@@ -50,8 +50,9 @@
 
 <script lang="ts">
 import { useRouteLocale } from "@vuepress/client";
-import { LocaleConfig } from "@vuepress/shared";
-import { defineComponent, ref, computed, PropType, toRefs } from "vue";
+import type { LocaleConfig } from "@vuepress/shared";
+import type { PropType } from "vue";
+import { defineComponent, ref, computed, toRefs } from "vue";
 import { useRouter } from "vue-router";
 import { useSuggestions } from "./engine";
 
@@ -129,7 +130,7 @@ export default defineComponent({
       }
       const suggest = suggestions.value[i];
       if (suggest) {
-        router.push(suggest.path);
+        void router.push(suggest.path);
       }
     }
 

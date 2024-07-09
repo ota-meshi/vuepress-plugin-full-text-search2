@@ -1,9 +1,0 @@
-/.nyc_output
-/coverage
-/lib
-/node_modules
-/tests/fixtures/**/*.json
-!/playground/docs/.vuepress
-/playground/docs/.vuepress/.temp
-/playground/docs/.vuepress/.cache
-/playground/docs/.vuepress/dist
