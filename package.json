@@ -65,8 +65,8 @@
     "@types/chai": "^4.2.22",
     "@types/mocha": "^10.0.0",
     "@types/node": "^20.0.0",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
     "chai": "^4.3.4",
     "cpx2": "^7.0.0",
     "eslint": "^9.6.0",
@@ -88,7 +88,7 @@
     "tsconfig-vuepress": "^4.5.0",
     "tsup": "^8.0.0",
     "typescript": "~5.5.0",
-    "typescript-eslint": "^7.16.0",
+    "typescript-eslint": "^8.0.0",
     "vue-eslint-parser": "^9.0.0",
     "vuepress": "^2.0.0-rc.8"
   }
