@@ -71,7 +71,7 @@
     "cpx2": "^7.0.0",
     "eslint": "^9.6.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-jsdoc": "^48.5.2",
+    "eslint-plugin-jsdoc": "^49.0.0",
     "eslint-plugin-json-schema-validator": "^5.0.0",
     "eslint-plugin-jsonc": "^2.0.0",
     "eslint-plugin-n": "^17.0.0",
