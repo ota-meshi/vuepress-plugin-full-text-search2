@@ -12,6 +12,10 @@
     ".": {
       "import": "./lib/index.js",
       "require": "./lib/index.cjs"
+    },
+    "./engine": {
+      "import": "./lib/client/engine.js",
+      "require": "./lib/client/engine.cjs"
     }
   },
   "types": "./lib/index.d.ts",
