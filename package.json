@@ -70,7 +70,7 @@
     "chai": "^4.3.4",
     "cpx2": "^8.0.0",
     "eslint": "^9.6.0",
-    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-prettier": "^10.0.0",
     "eslint-plugin-jsdoc": "^50.0.0",
     "eslint-plugin-json-schema-validator": "^5.0.0",
     "eslint-plugin-jsonc": "^2.0.0",
