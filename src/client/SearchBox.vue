@@ -78,14 +78,14 @@ export default defineComponent({
     const query = ref("");
     const focused = ref(false);
     const focusIndex = ref(-1);
-    const suggestions = useSuggestions(query);
+    const routeLocale = useRouteLocale();
+    const suggestions = useSuggestions(query, routeLocale.value);
 
     const activeSuggestion = computed(
       () => query.value && focused.value && suggestions.value.length,
     );
 
     const router = useRouter();
-    const routeLocale = useRouteLocale();
 
     const locale = computed(() => locales.value[routeLocale.value] ?? {});
 

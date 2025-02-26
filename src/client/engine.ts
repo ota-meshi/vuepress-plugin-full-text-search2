@@ -47,7 +47,7 @@ if (
 }
 
 /** Use suggestions */
-export function useSuggestions(query: Ref<string>): Ref<Suggestion[]> {
+export function useSuggestions(query: Ref<string>, routeLocale: string): Ref<Suggestion[]> {
   const suggestions = ref([] as Suggestion[]);
   let id: NodeJS.Timeout | null = null;
   watch(query, () => {
@@ -68,14 +68,16 @@ export function useSuggestions(query: Ref<string>): Ref<Suggestion[]> {
     const suggestionResults = new Map<string, Suggestion[]>();
     const suggestionSubTitles = new Set<string>();
     for (const page of searchIndex.value) {
-      for (const suggest of extractSuggestions(page, queryStr)) {
-        suggestionSubTitles.add(suggest.parentPageTitle);
-        let list = suggestionResults.get(suggest.parentPageTitle);
-        if (!list) {
-          list = [];
-          suggestionResults.set(suggest.parentPageTitle, list);
+      if(page.pathLocale === routeLocale) { // only extract suggestions for the current locale
+        for (const suggest of extractSuggestions(page, queryStr)) {
+          suggestionSubTitles.add(suggest.parentPageTitle);
+          let list = suggestionResults.get(suggest.parentPageTitle);
+          if (!list) {
+            list = [];
+            suggestionResults.set(suggest.parentPageTitle, list);
+          }
+          list.push(suggest);
         }
-        list.push(suggest);
       }
     }
     const sortedSuggestionSubTitles = [...suggestionSubTitles].sort((a, b) => {
