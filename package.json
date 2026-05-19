@@ -68,7 +68,7 @@
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "chai": "^4.3.4",
-    "cpx2": "^8.0.0",
+    "cpx2": "^9.0.0",
     "eslint": "^10.0.0",
     "eslint-config-prettier": "^10.0.0",
     "eslint-plugin-jsdoc": "^62.0.0",
